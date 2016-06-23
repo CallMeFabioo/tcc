@@ -44,9 +44,7 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        $this->validate($request, [ 'api_token' => 'required' ]);
-
-        JWTAuth::invalidate($request->input('api_token'));
+        JWTAuth::invalidate(JWTAuth::getToken());
     }
 
     public function register(UserRequest $request)

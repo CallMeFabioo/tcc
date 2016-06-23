@@ -12,13 +12,18 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('username', 20)->unique();
             $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('password', 60);
+            $table->string('avatar')->default('http://placehold.it/50/50');
             $table->timestamps();
+
+            $table->index('username');
+            $table->index('email');
         });
     }
 

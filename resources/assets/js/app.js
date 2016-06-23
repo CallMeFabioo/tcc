@@ -24,7 +24,7 @@ Vue.transition('fade', {
 });
 
 // Create router
-const router = new Router({
+export const router = new Router({
   history: true,
   saveScrollPosition: true
 });

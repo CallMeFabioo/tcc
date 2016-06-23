@@ -1,0 +1,15 @@
+.ui.vertical.menu {
+  width: auto;
+}
+
+.ui.menu:not(.vertical) {
+  .item {
+    justify-content: center;
+  }
+}
+
+.ui.menu .item {
+  > i.icon {
+    margin: 0;
+  }
+}
